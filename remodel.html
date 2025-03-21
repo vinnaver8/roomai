@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Remodeling Controls</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>AI Remodeling Controls</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="vr.html">VR Preview</a>
+        </nav>
+    </header>
+    <section class="container">
+        <h2>Upload Your Room Image</h2>
+        <input type="file" id="imageUpload" accept="image/*" />
+        <h3>Select Paint Color</h3>
+        <input type="color" id="colorPicker" value="#ffffff" />
+        <button onclick="applyChanges()">Apply Changes</button>
+        <img id="outputImage" src="#" alt="Remodeled Room" class="preview-img" />
+    </section>
+
+    <script>
+        function applyChanges() {
+            let color = document.getElementById('colorPicker').value;
+            document.getElementById('outputImage').style.filter = `sepia(30%) hue-rotate(${color})`;
+            alert('AI Remodeling Applied! 🎨');
+        }
+    </script>
+</body>
+</html>
